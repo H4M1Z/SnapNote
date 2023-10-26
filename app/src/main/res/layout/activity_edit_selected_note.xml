@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditSelectedNoteActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayoutEditSelectedNote"
+        app:layout_constraintStart_toStartOf="@id/leftSideVerticalGuideLine"
+        app:layout_constraintTop_toTopOf="@id/topHorizontalGuideLine"
+        app:layout_constraintEnd_toEndOf="@id/rightSideVerticalGuideLine"
+        android:background="@color/mainActivityBackGroundColour"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.095">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topMaterialTollBarEditSelectedNote"
+                android:layout_width="match_parent"
+                android:background="@color/mainActivityBackGroundColour"
+                android:layout_height="match_parent"
+                app:navigationIcon="@drawable/round_arrow_back_24"
+                app:title="Note"
+                app:titleMarginBottom="20dp"
+                app:titleTextColor="@color/black"/>
+        </com.google.android.material.appbar.AppBarLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftSideVerticalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightSideVerticalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topHorizontalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
+
+<TextView
+    android:id="@+id/tvShowPreviousTimeOutput"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Today, 10 54 AM"
+    android:textSize="19sp"
+    android:textColor="@color/editNoteShowOutputTimeColourGrey"
+    app:layout_constraintStart_toStartOf="@id/coordinatorLayoutEditSelectedNote"
+    app:layout_constraintTop_toBottomOf="@id/coordinatorLayoutEditSelectedNote"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="5dp"/>
+    <EditText
+        android:id="@+id/etNoteOutput"
+        android:layout_width="match_parent"
+        android:inputType="textMultiLine"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchbar_design"
+        android:textColor="@color/black"
+        android:paddingStart="10dp"
+        app:layout_constraintStart_toStartOf="@id/leftSideVerticalGuideLine"
+        app:layout_constraintTop_toBottomOf="@id/tvShowPreviousTimeOutput">
+    </EditText>
+    <ImageView
+        android:id="@+id/ivShowImageEditNoteActivity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etNoteOutput"
+        android:layout_marginTop="10dp"/>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottomCoordinatorLayoutEditSelectedNote"
+        app:layout_constraintStart_toStartOf="@id/leftSideVerticalGuideLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/rightSideVerticalGuideLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/mainActivityBackGroundColour"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+            <ImageView
+                android:id="@+id/ivGalleryEditSelectedNote"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/outline_insert_photo_24"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="165dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/itemGallery"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="157dp"/>
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

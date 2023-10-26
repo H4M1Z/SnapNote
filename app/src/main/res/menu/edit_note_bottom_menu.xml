@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/tv"
+    android:title="@string/itemFormat"
+    android:icon="@drawable/round_text_format_24"
+    app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/tvGallery"
+        android:title="@string/itemGallery"
+        android:icon="@drawable/outline_insert_photo_24"
+        app:showAsAction="ifRoom"/>
+</menu>

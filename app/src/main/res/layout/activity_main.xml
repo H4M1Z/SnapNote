@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftSideVerticalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.01" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightSideVerticalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.99" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topHorizontalGuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.01" />
+    <androidx.drawerlayout.widget.DrawerLayout
+        app:layout_constraintStart_toStartOf="@id/leftSideVerticalGuideLine"
+        app:layout_constraintTop_toTopOf="@id/topHorizontalGuideLine"
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:openDrawer="start">
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:background="@color/mainActivityBackGroundColour"
+                android:layout_height="match_parent">
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/topBarCoordinatorLayout"
+                android:layout_width="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="70dp">
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.appbar.MaterialToolbar
+                        android:id="@+id/topMaterialToolBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/mainActivityBackGroundColour"
+                        app:navigationIcon="@drawable/round_menu_24"
+                        app:menu="@menu/main_activity_top_bar_menu"
+                        app:title="@string/topBarTitle"
+                        app:titleTextColor="@color/black"/>
+                </com.google.android.material.appbar.AppBarLayout>
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragment_container_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.80"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="55dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:background="@color/mainActivityBackGroundColour"
+                app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"/>
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="match_parent"
+                android:background="@color/mainActivityBackGroundColour"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.11"
+                app:menu="@menu/bottom_navigation_menu"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/cardViewColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+                android:src="@drawable/round_add_24"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/fabTodo" />
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:id="@+id/bottomNavigationViewForDeletedItems"
+                    android:layout_width="match_parent"
+                    android:background="@color/mainActivityBackGroundColour"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.11"
+                    android:visibility="invisible"
+                    app:menu="@menu/bottom_navigation_delete_notes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:id="@+id/topBarCoordinatorLayoutForDeleteItems"
+                    android:layout_width="match_parent"
+                    android:visibility="invisible"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <com.google.android.material.appbar.MaterialToolbar
+                            android:id="@+id/topMaterialTollBarForDeleteItems"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/mainActivityBackGroundColour"
+                            app:navigationIcon="@drawable/outline_cancel_24"
+                            app:title="@string/itemDeleteItems"
+                            app:titleTextColor="@color/black"/>
+                    </com.google.android.material.appbar.AppBarLayout>
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/sideNavigationDrawer"
+            app:layout_constraintStart_toStartOf="@id/leftSideVerticalGuideLine"
+            app:layout_constraintTop_toTopOf="@id/topHorizontalGuideLine"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/mainActivityBackGroundColour"
+            app:headerLayout="@layout/header_navigation_drawer"
+            app:menu="@menu/navigation_drawer_menu"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

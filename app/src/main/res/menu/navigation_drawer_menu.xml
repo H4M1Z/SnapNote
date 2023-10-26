@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group
+    android:id="@+id/group1">
+    <item
+        android:id="@+id/tvCategoriesSubtitle"
+        android:title="@string/itemCategories">
+        <menu>
+    <item
+        android:id="@+id/tvAllNotes"
+        android:title="@string/itemAllNotes"
+        android:icon="@drawable/baseline_menu_book_24"/>
+    <item
+        android:id="@+id/tvMyFavourites"
+        android:title="@string/itemMyFavourites"
+        android:icon="@drawable/baseline_star_border_24"/>
+        </menu>
+    </item>
+</group>
+    <group
+        android:id="@+id/group2">
+<item
+    android:id="@+id/tvGeneralSubtitle"
+    android:title="@string/itemSubTitle">
+    <menu>
+        <item
+            android:id="@+id/tvShareThisApp"
+            android:icon="@drawable/round_share_24"
+            android:title="@string/itemSHareThisApp"/>
+        <item
+            android:id="@+id/tvSupportUs"
+            android:title="@string/itemSupportUs"
+            android:icon="@drawable/rateus"/>
+        <item
+            android:id="@+id/tvAbout"
+            android:title="@string/itemAbout"
+            android:icon="@drawable/outline_info_24"/>
+        <item
+            android:id="@+id/tvExit"
+            android:title="@string/itemExit"
+            android:icon="@drawable/round_exit_to_app_24"/>
+
+
+    </menu>
+</item>
+    </group>
+</menu>

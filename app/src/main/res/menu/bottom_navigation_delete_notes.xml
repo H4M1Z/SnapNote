@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tvDelete"
+        android:title="@string/itemDelete"
+        android:icon="@drawable/round_delete_24"/>
+
+</menu>
