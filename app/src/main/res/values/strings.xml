@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Notepad</string>
+    <string name="app_name">Snap Note</string>
     <string name="topBarTitle">All notes</string>
     <string name="etSearch">Search notes</string>
     <string name="itemNotes">Notes</string>
